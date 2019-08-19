@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机列表</title>
+</head>
+<body>
+    <h2>以下是目前本店销售中的二手手机列表</h2>
+    <hr />
+    <table width="400" border="1" bgcolor="#ffebcd">
+        <tr>
+            <td>品名</td>
+            <td>售价</td>
+            <td>库存</td>
+        </tr>
+        {% for p  in products %}
+            <tr>
+            <td>
+                <a href="/list/{{ p.sku }}/">{{ p.name }}</a>
+            </td>
+            <td>
+                {{ p.price }}
+            </td>
+            <td>
+                {{ p.qty }}
+            </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <hr />
+    <a href="/">回首页</a>
+</body>
+</html>
